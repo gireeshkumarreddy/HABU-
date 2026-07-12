@@ -1,9 +1,8 @@
 # HABU — Netlify configuration.
-# The official Next.js runtime handles the App Router build output
-# (declared explicitly so CLI deploys match UI-connected builds).
+# The site is a Next.js static export (next.config.ts → output: "export"),
+# so it publishes the prebuilt `out/` directory as a plain static site — no
+# Next.js runtime plugin required.
 
 [build]
   command = "npm run build"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+  publish = "out"
